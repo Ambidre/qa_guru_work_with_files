@@ -12,9 +12,17 @@ repositories {
 dependencies {
     implementation 'junit:junit:4.13.1'
     testImplementation (
+            "commons-io:commons-io:2.11.0",
+            "com.codeborne:pdf-test:1.7.0",
+            "com.codeborne:xls-test:1.2",
+            "com.opencsv:opencsv:5.5.2",
             "com.codeborne:selenide:5.25.0",
             "org.junit.jupiter:junit-jupiter-api:5.8.0")
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.8.0"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }
 
 test {
